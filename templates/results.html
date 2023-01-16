@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Reviews</div>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Channel_name</th>
+         <th>Video_title</th>
+         <th>Video_url</th>
+         <th>Views</th>
+         <th>Video_publish_date</th>
+         <th>Video_Likes</th>
+         <th>Comments_Count</th>
+         <th>Thumbnail_url</th>
+      </tr>
+         {% for review in reviews %}
+      <tr>
+          <td>{{review['Channel_name']}}</td>
+         <td>{{review['Video_title']}}</td>
+         <td>{{review['Video_url']}}</td>
+         <td>{{review['Views']}}</td>
+         <td>{{review['Video_publish_date']}} </td>
+         <td>{{review['Video_Likes']}} </td>
+         <td>{{review['Comments_Count']}} </td>
+         <td>{{review['Thumbnail_url']}} </td>
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
+
